@@ -3,12 +3,11 @@
 
 using namespace std;
 
-void bubble_sort(int n) {                             // bubble sort
-    vector<int> bub(n);
+void bubble_sort(vector<int> bub) {                             // bubble sort
     int tr = 0;
     int comp = 0;
-    for (int j = 0; j < n - 1; j++) {
-        for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < bub.size() - 1; j++) {
+        for (int i = 0; i < bub.size() - 1; i++) {
             comp++;
             if (bub[i] > bub[i + 1]) {
                 swap (bub[i], bub[i + 1]);
@@ -16,17 +15,16 @@ void bubble_sort(int n) {                             // bubble sort
             }
         }
     }
-    for (int i = 0; i < n; i++) {
-        cout << bub[i] << " ";
+    for (int i : bub) {
+        cout << i << " ";
         }
     cout << endl << "Bubble sorted array" << endl << "Number of comparisons: " << comp << endl <<  "Number of transpositions: " << tr;
 }
 
-void insertion_sort (int n) {                          // insertion sort
-    vector<int> ins(n);
+void insertion_sort (vector<int> ins) {                          // insertion sort
     int tr = 0;
     int comp = 0;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < ins.size(); i++) {
         int j = i - 1;
         int key = ins[i];
         comp++;
@@ -37,8 +35,8 @@ void insertion_sort (int n) {                          // insertion sort
         }
         ins[j + 1] = key;
     }
-    for (int i = 0; i < n; i++) {
-        cout << ins[i] << " ";
+    for (int in : ins) {
+        cout << in << " ";
     }
     cout << endl << "Insertion sorted array" << endl << "Number of comparisons: " << comp << endl << "Number of transpositions: " << tr;
 }
@@ -47,14 +45,14 @@ int main() {
     int n;
     cin >> n;
     vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        a[i] = rand();
-        cout << a[i] << " ";
+    for (int & i : a) {
+        i = rand();
+        cout << i << " ";
     }
     cout << endl << "Original array" << endl << "Choose method:" << endl << "1 - bubble" << endl << "2 - insertion" << endl;
     int choice;
     cin >> choice;
-    if (choice == 1) bubble_sort (n);
-    if (choice == 2) insertion_sort (n);
+    if (choice == 1) bubble_sort (a);
+    if (choice == 2) insertion_sort (a);
     return 0;
 }
