@@ -1,0 +1,3 @@
+C:/Users/Godlub/CLionProjects/sorting_arrays/cmake-build-debug/CMakeFiles/sorting_arrays.dir
+C:/Users/Godlub/CLionProjects/sorting_arrays/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Godlub/CLionProjects/sorting_arrays/cmake-build-debug/CMakeFiles/rebuild_cache.dir
