@@ -29,9 +29,10 @@ void insertion_sort (vector<int> ins) {                          // insertion so
         int key = ins[i];
         comp++;
         while (j > 0 && ins[j] > key) {
+            comp++;
             ins[j + 1] = ins[j];
-            j--;
             tr++;
+            j--;
         }
         ins[j + 1] = key;
     }
@@ -42,6 +43,7 @@ void insertion_sort (vector<int> ins) {                          // insertion so
 }
 
 int main() {
+    cout << "Enter the size of the array:" << endl;
     int n;
     cin >> n;
     vector<int> a(n);
@@ -49,7 +51,7 @@ int main() {
         i = rand();
         cout << i << " ";
     }
-    cout << endl << "Original array" << endl << "Choose method:" << endl << "1 - bubble" << endl << "2 - insertion" << endl;
+    cout << endl << "Original array" << endl << "Choose method:" << endl << "1 - bubble sort" << endl << "2 - insertion sort" << endl;
     int choice;
     cin >> choice;
     if (choice == 1) bubble_sort (a);
